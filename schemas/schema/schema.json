@@ -1,0 +1,898 @@
+{
+  "id": "schema.json#",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "version": "1.1.3",
+  "description": "schema for ADIwg mdJSON metadata",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "#/definitions/de.workorder.fieldworker-1.0.0.json"
+    },
+    {
+      "$comment": "Optionally, either a location or locationUUID can be specified, but not both",
+      "properties": {
+        "location": {
+          "$ref": "#/definitions/de.location.base-1.0.0.json"
+        },
+        "locationUUID": {
+          "$ref": "#/definitions/de.identity-1.0.0.json"
+        }
+      },
+      "dependencies": {
+        "location": {
+          "not": {
+            "required": [
+              "locationUUID"
+            ]
+          }
+        },
+        "locationUUID": {
+          "not": {
+            "required": [
+              "location"
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "definitions": {
+    "de.identity-1.0.0.json": {
+      "title": "Identity Model",
+      "description": "The description of an identity string",
+      "$comment": "UUID (Primary Key)",
+      "type": "string",
+      "maxLength": 36
+    },
+    "de.workorder.statustypes-1.0.0.json": {
+      "title": "Work Order Status Types Model",
+      "description": "A set of valid status types for Work Orders",
+      "type": "string",
+      "enum": [
+        "Potential",
+        "Open",
+        "Complete"
+      ]
+    },
+    "de.nullable.string-1.0.0.json": {
+      "title": "A Nullable String",
+      "description": "A string that can be nullable",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "de.workorder.worktypes-1.0.0.json": {
+      "title": "Work Order Work Types Model",
+      "description": "A set of valid work types for Work Orders",
+      "oneOf": [
+        {
+          "type": "string",
+          "enum": [
+            "Administration",
+            "Capital",
+            "Maintenance - Scheduled",
+            "Maintenance - Condition Based",
+            "Maintenance - Predicative",
+            "Maintenance - Corrective",
+            "Maintenance - Reactive",
+            "Safety"
+          ]
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "de.nullable.integer-1.0.0.json": {
+      "title": "A Nullable Integer",
+      "description": "An integer that can be nullable",
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "de.core.extendedattributes.datatype-1.0.0.json": {
+      "title": "Attribute Types Model",
+      "description": "A set of valid status types for Assets",
+      "type": "string",
+      "enum": [
+        "string",
+        "date",
+        "locationRef",
+        "boolean",
+        "number"
+      ]
+    },
+    "de.core.extendedattributes-1.0.0.json": {
+      "title": "Extended Attribute Model",
+      "description": "The definition of a extended attributes",
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "This is the key of the extended attribute used for lookup",
+          "title": "name"
+        },
+        "value": {
+          "type": "string",
+          "description": "This is the actual value of the extended attribute. Note value is always represented as a string but based on the data type could be understood as a number, date, email etc.",
+          "title": "value"
+        },
+        "dataType": {
+          "$ref": "#/definitions/de.core.extendedattributes.datatype-1.0.0.json",
+          "description": "This is the optional data type of the value i.e. a cue on how to interpret the value",
+          "title": "dataType"
+        }
+      },
+      "required": [
+        "name",
+        "value"
+      ]
+    },
+    "de.core.extendedattributes.groups-1.0.0.json": {
+      "title": "Groups for extended Attribute Model",
+      "description": "The definition of a groups for extended attributes",
+      "type": "object",
+      "properties": {
+        "group": {
+          "type": "string",
+          "description": "This is the name of the group (solution) the extended attribute belongs to",
+          "title": "group"
+        },
+        "attributes": {
+          "type": "array",
+          "default": [],
+          "items": {
+            "$ref": "#/definitions/de.core.extendedattributes-1.0.0.json",
+            "title": "items"
+          },
+          "description": "This is the list of attributes for the group",
+          "title": "attributes"
+        }
+      },
+      "required": [
+        "group",
+        "attributes"
+      ],
+      "additionalProperties": false
+    },
+    "de.workorder-1.0.0.json": {
+      "title": "Work Order Model",
+      "description": "The Work Order",
+      "type": "object",
+      "properties": {
+        "workOrderUUID": {
+          "$ref": "#/definitions/de.identity-1.0.0.json",
+          "title": "workOrderUUID"
+        },
+        "workOrderId": {
+          "description": "The Customer Identification Id.",
+          "$comment": "Refer to Generation of Entity IDs. EAMX Lite Common Requirements. Default: Counter starting from 1 - not zero padded. Equivalent to the Display Id.",
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "string",
+              "maxLength": 32
+            }
+          ],
+          "title": "workOrderId"
+        },
+        "description": {
+          "type": "string",
+          "description": "The description of the Work Order.",
+          "maxLength": 100,
+          "title": "description"
+        },
+        "extendedDescription": {
+          "description": "The extended description of the Work Order.",
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "string",
+              "maxLength": 2000
+            }
+          ],
+          "title": "extendedDescription"
+        },
+        "status": {
+          "$ref": "#/definitions/de.workorder.statustypes-1.0.0.json",
+          "description": "The Status of the Work Order.",
+          "title": "status"
+        },
+        "userStatus": {
+          "$ref": "#/definitions/de.nullable.string-1.0.0.json",
+          "description": "The User Status for the Work Order.",
+          "$comment": "This is a client defined User Status (Customer defined).",
+          "title": "userStatus"
+        },
+        "assetWork": {
+          "type": "boolean",
+          "description": "Identifies if the Work Order Template is associated with an Asset.",
+          "$comment": "WorkOrder - AssetWork / NonAssetWork flag.",
+          "title": "assetWork"
+        },
+        "workType": {
+          "$ref": "#/definitions/de.workorder.worktypes-1.0.0.json",
+          "description": "The Work Order Template Work Type. Identifies the type of work to be performed.",
+          "title": "workType"
+        },
+        "priority": {
+          "$ref": "#/definitions/de.nullable.integer-1.0.0.json",
+          "description": "Identifies the Priority of the Work Order. Indication of the level of business risk that relates to the operation or failure of an asset if the work is not performed.",
+          "title": "priority"
+        },
+        "plannedDuration": {
+          "$ref": "#/definitions/de.nullable.integer-1.0.0.json",
+          "description": "The planned duration for the work to be conducted for the Work Order.",
+          "$comment": "Milliseconds",
+          "title": "plannedDuration"
+        },
+        "actualDuration": {
+          "$ref": "#/definitions/de.nullable.integer-1.0.0.json",
+          "description": "The actual duration for the work to be conducted for the Work Order.",
+          "$comment": "Milliseconds",
+          "title": "actualDuration"
+        },
+        "completionComments": {
+          "description": "The completion comments for the Work Order.",
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "string",
+              "maxLength": 2000
+            }
+          ],
+          "title": "completionComments"
+        },
+        "solutionAttributes": {
+          "description": "A set of additional solution attributes associated with a specific Work Order used in a given industry.",
+          "type": "array",
+          "default": [],
+          "items": {
+            "$ref": "#/definitions/de.core.extendedattributes.groups-1.0.0.json",
+            "title": "items"
+          },
+          "title": "solutionAttributes"
+        },
+        "customAttributes": {
+          "description": "A set of additional customer attributes associated with the Work Order.",
+          "type": "array",
+          "default": [],
+          "items": {
+            "$ref": "#/definitions/de.core.extendedattributes.groups-1.0.0.json",
+            "title": "items"
+          },
+          "title": "customAttributes"
+        },
+        "children": {
+          "description": "Children work orders of this work order (parent)",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/de.workorder-1.0.0.json",
+            "title": "items"
+          },
+          "title": "children"
+        }
+      }
+    },
+    "de.workorder.date.time.milliseconds-1.0.0.json": {
+      "title": "Work Order Model with date time fields in milliseconds",
+      "description": "The Work Order Model with date time fields in milliseconds",
+      "type": "object",
+      "properties": {
+        "raisedDateTime": {
+          "type": "integer",
+          "description": "The creation Date/Time of the Work Order.",
+          "$comment": "Milliseconds (UTC)",
+          "title": "raisedDateTime"
+        },
+        "requiredByDateTime": {
+          "$ref": "#/definitions/de.nullable.integer-1.0.0.json",
+          "description": "The Required By Date/Time of the Work Order.",
+          "$comment": "Milliseconds (UTC)",
+          "title": "requiredByDateTime"
+        },
+        "plannedStartDateTime": {
+          "$ref": "#/definitions/de.nullable.integer-1.0.0.json",
+          "description": "The Planned Start Date/Time of the Work Order.",
+          "$comment": "Milliseconds (UTC)",
+          "title": "plannedStartDateTime"
+        },
+        "plannedFinishDateTime": {
+          "$ref": "#/definitions/de.nullable.integer-1.0.0.json",
+          "description": "The Planned Finish Date/Time of the Work Order.",
+          "$comment": "Milliseconds (UTC)",
+          "title": "plannedFinishDateTime"
+        },
+        "actualStartDateTime": {
+          "$ref": "#/definitions/de.nullable.integer-1.0.0.json",
+          "description": "The Actual Start Date/Time of the Work Order.",
+          "$comment": "Milliseconds (UTC)",
+          "title": "actualStartDateTime"
+        },
+        "actualFinishDateTime": {
+          "$ref": "#/definitions/de.nullable.integer-1.0.0.json",
+          "description": "The Actual Finish Date/Time of the Work Order.",
+          "$comment": "Milliseconds (UTC)",
+          "title": "actualFinishDateTime"
+        },
+        "closedDateTime": {
+          "$ref": "#/definitions/de.nullable.integer-1.0.0.json",
+          "description": "The Closed Date/Time of the Work Order.",
+          "$comment": "Milliseconds (UTC)",
+          "title": "closedDateTime"
+        }
+      }
+    },
+    "de.workorder.base-1.0.0.json": {
+      "title": "Base Work Order Model",
+      "description": "The Base Work Order",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/de.workorder-1.0.0.json"
+        },
+        {
+          "$ref": "#/definitions/de.workorder.date.time.milliseconds-1.0.0.json"
+        }
+      ]
+    },
+    "de.nullable.identity-1.0.0.json": {
+      "title": "A Nullable Identity",
+      "description": "A identity that can be nullable",
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "#/definitions/de.identity-1.0.0.json"
+        }
+      ]
+    },
+    "optionalAttributes": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/checkWorkflow"
+        },
+        {
+          "$ref": "#/definitions/siteLocation"
+        },
+        {
+          "$ref": "#/definitions/isEmergency"
+        }
+      ],
+      "title": "optionalAttributes"
+    },
+    "checkWorkflow": {
+      "$comment": "Optional",
+      "if": {
+        "properties": {
+          "name": {
+            "const": "checkWorkflow",
+            "title": "name"
+          }
+        },
+        "title": "if"
+      },
+      "then": {
+        "properties": {
+          "value": {
+            "enum": [
+              "true",
+              "false"
+            ],
+            "title": "value"
+          },
+          "dataType": {
+            "const": "boolean",
+            "title": "dataType"
+          }
+        },
+        "title": "then"
+      },
+      "title": "checkWorkflow"
+    },
+    "siteLocation": {
+      "$comment": "Optional",
+      "if": {
+        "properties": {
+          "name": {
+            "const": "siteLocation",
+            "title": "name"
+          }
+        },
+        "title": "if"
+      },
+      "then": {
+        "properties": {
+          "value": {
+            "$ref": "#/definitions/de.nullable.identity-1.0.0.json",
+            "title": "value"
+          },
+          "dataType": {
+            "const": "locationRef",
+            "title": "dataType"
+          }
+        },
+        "title": "then"
+      },
+      "title": "siteLocation"
+    },
+    "isEmergency": {
+      "$comment": "Mandatory",
+      "if": {
+        "properties": {
+          "name": {
+            "const": "isEmergency",
+            "title": "name"
+          }
+        },
+        "title": "if"
+      },
+      "then": {
+        "properties": {
+          "value": {
+            "enum": [
+              "true",
+              "false"
+            ],
+            "title": "value"
+          },
+          "dataType": {
+            "const": "boolean",
+            "title": "dataType"
+          }
+        },
+        "title": "then"
+      },
+      "title": "isEmergency"
+    },
+    "de.workorder.fieldworker-1.0.0.json": {
+      "description": "Work Order Field Worker Solution Attribute Model",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/de.workorder.base-1.0.0.json"
+        },
+        {
+          "properties": {
+            "solutionAttributes": {
+              "type": "array",
+              "items": [
+                {
+                  "properties": {
+                    "group": {
+                      "const": "fieldWorker"
+                    },
+                    "attributes": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/definitions/optionalAttributes"
+                      },
+                      "contains": {
+                        "properties": {
+                          "name": {
+                            "const": "isEmergency"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "required": [
+                    "group",
+                    "attributes"
+                  ]
+                },
+                {
+                  "properties": {
+                    "group": {
+                      "const": "testAttributes"
+                    },
+                    "attributes": {
+                      "type": "array",
+                      "items": [
+                        {
+                          "properties": {
+                            "name": {
+                              "const": "testBooleanAttr",
+                              "description": "A test solution attribute called testBooleanAttr"
+                            },
+                            "value": {
+                              "type": "string",
+                              "description": "A test solution attribute"
+                            },
+                            "datatype": {
+                              "const": "boolean",
+                              "description": "The datatype for this test boolean solution attribute must always be boolean"
+                            }
+                          }
+                        },
+                        {
+                          "properties": {
+                            "name": {
+                              "const": "anotherTestAttr",
+                              "description": "A test solution attribute called anotherTestAttr"
+                            },
+                            "value": {
+                              "type": "string",
+                              "description": "A test solution attribute"
+                            },
+                            "datatype": {
+                              "const": "number",
+                              "description": "The datatype for this test boolean solution attribute must always be number"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "required": [
+                    "group",
+                    "attributes"
+                  ]
+                }
+              ]
+            }
+          },
+          "required": [
+            "solutionAttributes"
+          ]
+        }
+      ],
+      "definitions": {
+        "optionalAttributes": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/checkWorkflow"
+            },
+            {
+              "$ref": "#/definitions/siteLocation"
+            },
+            {
+              "$ref": "#/definitions/isEmergency"
+            }
+          ],
+          "title": "optionalAttributes"
+        },
+        "checkWorkflow": {
+          "$comment": "Optional",
+          "if": {
+            "properties": {
+              "name": {
+                "const": "checkWorkflow",
+                "title": "name"
+              }
+            },
+            "title": "if"
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "enum": [
+                  "true",
+                  "false"
+                ],
+                "title": "value"
+              },
+              "dataType": {
+                "const": "boolean",
+                "title": "dataType"
+              }
+            },
+            "title": "then"
+          },
+          "title": "checkWorkflow"
+        },
+        "siteLocation": {
+          "$comment": "Optional",
+          "if": {
+            "properties": {
+              "name": {
+                "const": "siteLocation",
+                "title": "name"
+              }
+            },
+            "title": "if"
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "$ref": "#/definitions/de.nullable.identity-1.0.0.json",
+                "title": "value"
+              },
+              "dataType": {
+                "const": "locationRef",
+                "title": "dataType"
+              }
+            },
+            "title": "then"
+          },
+          "title": "siteLocation"
+        },
+        "isEmergency": {
+          "$comment": "Mandatory",
+          "if": {
+            "properties": {
+              "name": {
+                "const": "isEmergency",
+                "title": "name"
+              }
+            },
+            "title": "if"
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "enum": [
+                  "true",
+                  "false"
+                ],
+                "title": "value"
+              },
+              "dataType": {
+                "const": "boolean",
+                "title": "dataType"
+              }
+            },
+            "title": "then"
+          },
+          "title": "isEmergency"
+        }
+      },
+      "title": "de.workorder.fieldworker-1.0.0.json"
+    },
+    "de.core.geometrytypes-1.0.0.json": {
+      "title": "Geometry Types Model",
+      "description": "A set of valid geometry types",
+      "type": "string",
+      "enum": [
+        "Point",
+        "Linear",
+        "Area"
+      ],
+      "default": "Point"
+    },
+    "de.core.geometrypoint-1.0.0.json": {
+      "title": "Geometry Point Model",
+      "description": "A valid geometry point",
+      "type": "object",
+      "properties": {
+        "x": {
+          "type": "number",
+          "title": "x"
+        },
+        "y": {
+          "type": "number",
+          "title": "y"
+        }
+      },
+      "required": [
+        "x",
+        "y"
+      ],
+      "additionalProperties": false
+    },
+    "de.location.base-1.0.0.json": {
+      "title": "Base Location Model",
+      "description": "The base model of DE Location",
+      "type": "object",
+      "allOf": [
+        {
+          "properties": {
+            "locationId": {
+              "description": "The Location Display Id",
+              "$comment": "Refer to Generation of Entity IDs. EAMX Lite Common Requirements",
+              "oneOf": [
+                {
+                  "type": "string",
+                  "maxLength": 32
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "locationDescription": {
+              "description": "The description of the Location ",
+              "$comment": "This is a further detailed description of the Location.",
+              "oneOf": [
+                {
+                  "type": "string",
+                  "maxLength": 2000
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "parentLocationUUID": {
+              "description": "The DF UUID of the parent of the current location ",
+              "$ref": "#/definitions/de.nullable.identity-1.0.0.json"
+            },
+            "locationAddress": {
+              "oneOf": [
+                {
+                  "type": "object",
+                  "$comment": "Location specified as a street/postal address",
+                  "properties": {
+                    "addressLine1": {
+                      "oneOf": [
+                        {
+                          "type": "string",
+                          "maxLength": 100
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "addressLine2": {
+                      "oneOf": [
+                        {
+                          "type": "string",
+                          "maxLength": 100
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "city": {
+                      "oneOf": [
+                        {
+                          "type": "string",
+                          "maxLength": 60
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "state": {
+                      "oneOf": [
+                        {
+                          "type": "string",
+                          "maxLength": 40
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "postcode": {
+                      "oneOf": [
+                        {
+                          "type": "string",
+                          "maxLength": 10
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "country": {
+                      "oneOf": [
+                        {
+                          "type": "string",
+                          "maxLength": 2
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    }
+                  },
+                  "minProperties": 1
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "locationGIS": {
+              "oneOf": [
+                {
+                  "type": "object",
+                  "$comment": "Location specified as a point, line or area",
+                  "properties": {
+                    "type": {
+                      "$ref": "#/definitions/de.core.geometrytypes-1.0.0.json"
+                    },
+                    "geometry": {
+                      "type": "array",
+                      "description": "A set of geometry points",
+                      "items": {
+                        "$ref": "#/definitions/de.core.geometrypoint-1.0.0.json"
+                      },
+                      "minItems": 1
+                    }
+                  },
+                  "required": [
+                    "type",
+                    "geometry"
+                  ]
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "userDefinedLocations": {
+              "oneOf": [
+                {
+                  "$comment": "Location specified as any user defined text",
+                  "type": "array",
+                  "description": "List of user defined locations",
+                  "items": {
+                    "type": "string"
+                  },
+                  "minItems": 1
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "solutionAttributes": {
+              "description": "A set of additional solution attributes associated with a specific location used in a given industry",
+              "type": "array",
+              "default": [],
+              "items": {
+                "$ref": "#/definitions/de.core.extendedattributes.groups-1.0.0.json"
+              }
+            },
+            "customAttributes": {
+              "description": "A set of additional customer attributes associated with the Location",
+              "type": "array",
+              "default": [],
+              "items": {
+                "$ref": "#/definitions/de.core.extendedattributes.groups-1.0.0.json"
+              }
+            }
+          }
+        },
+        {
+          "anyOf": [
+            {
+              "properties": {
+                "locationAddress": {
+                  "type": "object"
+                }
+              },
+              "required": [
+                "locationAddress"
+              ]
+            },
+            {
+              "properties": {
+                "locationGIS": {
+                  "type": "object"
+                }
+              },
+              "required": [
+                "locationGIS"
+              ]
+            },
+            {
+              "properties": {
+                "userDefinedLocations": {
+                  "type": "array"
+                }
+              },
+              "required": [
+                "userDefinedLocations"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
