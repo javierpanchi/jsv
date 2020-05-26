@@ -681,7 +681,7 @@
     },
     "de.location.base-1.0.0.json": {
       "title": "Base Location Model",
-      "description": "The base model of DE Location",
+      "description": "The base model of DE Location123",
       "type": "object",
       "allOf": [
         {
