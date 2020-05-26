@@ -1,12 +1,12 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$schema": "http://json-schema.org/draft-04/schema#",
 	"version": "1.1.3",
     "type": "object",
     "title": "Workorder Subdomains",
     "definitions": {
         "de.party.party.partystatus-1.0.0.json": {
             "default": "draft",
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "A set of valid party types",
             "type": "string",
             "title": "Party Types Model",
@@ -19,7 +19,7 @@
             "$id": "de.party.party.partystatus-1.0.0.json"
         },
         "de.nullable.number-1.0.0.json": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "A number that can be nullable",
             "type": [
                 "number",
@@ -29,7 +29,7 @@
             "$id": "de.nullable.number-1.0.0.json"
         },
         "de.boundingbox-1.0.0.json": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "BoundingBox schema",
             "additionalProperties": false,
             "type": "object",
@@ -104,7 +104,7 @@
                     }
                 }
             ],
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "Ingestion Result of Work Order Dependencies",
             "type": "object",
             "title": "Ingestion Result of Work Order Dependencies",
@@ -161,14 +161,14 @@
                     }
                 }
             ],
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "Event wrapper used for ingestion of Work Order Template Dependencies in Data Fabric",
             "type": "object",
             "title": "Event wrapper used for ingestion of Work Order Template Dependencies in Data Fabric",
             "$id": "de.workorder.workordertemplatedependency.event-1.0.0.json"
         },
         "de.attachment.attachmentref.entity.type-1.0.0.json": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "Model defines the attributes for the old Attachment structures",
             "type": "string",
             "enum": [
@@ -185,7 +185,7 @@
             "$id": "de.attachment.attachmentref.entity.type-1.0.0.json"
         },
         "de.asset.asset-1.0.0.json": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "Defines the Asset - Physical Item.",
             "type": "object",
             "title": "Asset",
@@ -421,14 +421,14 @@
             "$id": "de.asset.asset-1.0.0.json"
         },
         "de.skill.skillset.identity.uuid-1.0.0.json": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "Skill Set UUID (Primary Key)",
             "title": "Skill Set UUID",
             "$ref": "#/definitions/de.identity-1.0.0.json",
             "$id": "de.skill.skillset.identity.uuid-1.0.0.json"
         },
         "de.party.party.position-1.0.0.json": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "The base model of DE Party Position",
             "type": "object",
             "title": "Party Position Model",
@@ -450,14 +450,14 @@
             "$id": "de.party.party.position-1.0.0.json"
         },
         "de.workorder.workordertemplate.identity.uuid-1.0.0.json": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "Work Order Template UUID (Primary Key)",
             "title": "Work Order Template UUID",
             "$ref": "#/definitions/de.identity-1.0.0.json",
             "$id": "de.workorder.workordertemplate.identity.uuid-1.0.0.json"
         },
         "de.attachment.attachmentref.identity.uuid-1.0.0.json": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "Attachment Ref UUID (Primary Key)",
             "title": "Attachment Ref UUID",
             "$ref": "#/definitions/de.identity-1.0.0.json",
@@ -472,14 +472,14 @@
                     "type": "null"
                 }
             ],
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "Nullable Location UUID (Primary Key)",
             "title": "Nullable Location UUID",
             "$id": "de.nullable.location.location.identity.uuid-1.0.0.json"
         },
         "de.party.party.partytypes-1.0.0.json": {
             "default": "individual",
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "A set of valid party types",
             "type": "string",
             "title": "Party Types Model",
@@ -492,14 +492,14 @@
             "$id": "de.party.party.partytypes-1.0.0.json"
         },
         "de.asset.usagemeasurementproperty.identity.uuid-1.0.0.json": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "The unique identifier for the Usage Measurement Property",
             "title": "Usage Measurement Property UUID",
             "$ref": "#/definitions/de.identity-1.0.0.json",
             "$id": "de.asset.usagemeasurementproperty.identity.uuid-1.0.0.json"
         },
         "de.core.extendedattributes.datatype-1.0.0.json": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "A set of valid status types for Assets",
             "type": "string",
             "title": "Attribute Types Model",
@@ -521,13 +521,13 @@
                     "$ref": "#/definitions/de.code.type-1.0.0.json"
                 }
             ],
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "A Code Type that can be nullable",
             "title": "A Nullable Code Type",
             "$id": "de.nullable.code.type-1.0.0.json"
         },
         "de.workorder.workorder.identity.uuid-1.0.0.json": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "Work Order UUID (Primary Key)",
             "title": "Work Order UUID",
             "$ref": "#/definitions/de.identity-1.0.0.json",
@@ -573,14 +573,14 @@
                     }
                 }
             ],
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "Ingestion of Work Order Templates",
             "type": "object",
             "title": "Ingestion of Work Order Templates",
             "$id": "de.workorder.workordertemplate.ingestion-1.0.0.json"
         },
         "de.workorder.workorderdependency-1.0.0.json": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "The Work Order Dependency specifies the dependency between two Work Orders",
             "type": "object",
             "title": "Work Order Dependency Model",
@@ -660,13 +660,13 @@
                     "type": "integer"
                 }
             ],
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "date-time field definition to support both ISO 8601 format and milliseconds",
             "title": "A Date time type",
             "$id": "de.datetime.type-1.0.0.json"
         },
         "de.nullable.string-1.0.0.json": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "A string that can be nullable",
             "type": [
                 "string",
@@ -676,14 +676,14 @@
             "$id": "de.nullable.string-1.0.0.json"
         },
         "de.asset.asset.identity.uuid-1.0.0.json": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "The Unique (across Assets) Customer Identification Id for the Asset.",
             "title": "Asset UUID",
             "$ref": "#/definitions/de.identity-1.0.0.json",
             "$id": "de.asset.asset.identity.uuid-1.0.0.json"
         },
         "de.financialbalance.currency-1.0.0.json": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "The Legal Entity and Data Entity financial balances and transactions will be held in multiple currencies.",
             "$comment": "The valid codes that represent those currencies must be defined to ensure accurate foreign exchange calculations and reporting.",
             "type": "object",
@@ -722,14 +722,14 @@
             "$id": "de.financialbalance.currency-1.0.0.json"
         },
         "de.workorderactivity.form.identity.uuid-1.0.0.json": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "Form UUID (Primary Key)",
             "title": "Form UUID",
             "$ref": "#/definitions/de.identity-1.0.0.json",
             "$id": "de.workorderactivity.form.identity.uuid-1.0.0.json"
         },
         "de.nullable.integer-1.0.0.json": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "An integer that can be nullable",
             "type": [
                 "integer",
@@ -739,7 +739,7 @@
             "$id": "de.nullable.integer-1.0.0.json"
         },
         "de.statustypes-1.0.0.json": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "A set of valid status",
             "type": "string",
             "title": "Status Types Model",
@@ -752,7 +752,7 @@
             "$id": "de.statustypes-1.0.0.json"
         },
         "de.party.party.organisation-1.0.0.json": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "The base model of DE Party Organisation",
             "type": "object",
             "title": "Party Organisation Model",
@@ -859,7 +859,7 @@
             "$id": "de.party.party.organisation-1.0.0.json"
         },
         "de.asset.assetposition.identity.uuid-1.0.0.json": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "The unique technical identifier of the Asset Position",
             "title": "Asset Position UUID",
             "$ref": "#/definitions/de.identity-1.0.0.json",
@@ -882,7 +882,7 @@
                     "type": "null"
                 }
             ],
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "A set of valid dependency types for Work Order Templates",
             "$comment": "Defines the dependency type between two Work Orders or two Work Order Templates",
             "title": "Work Order Template Status Types Model",
@@ -923,14 +923,14 @@
                     }
                 }
             ],
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "The Feature Position.",
             "type": "object",
             "title": "Feature Position",
             "$id": "de.asset.featureposition-1.0.0.json"
         },
         "de.nullable.boolean-1.0.0.json": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "A boolean that can be nullable",
             "type": [
                 "boolean",
@@ -940,14 +940,14 @@
             "$id": "de.nullable.boolean-1.0.0.json"
         },
         "de.workorder.workordertemplatedependency.identity.uuid-1.0.0.json": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "Work Order Template Dependency UUID (Primary Key)",
             "title": "Work Order Template Dependency UUID",
             "$ref": "#/definitions/de.identity-1.0.0.json",
             "$id": "de.workorder.workordertemplatedependency.identity.uuid-1.0.0.json"
         },
         "de.asset.usagemeasurementproperty-1.0.0.json": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "Defines the Usage Measurement Property for Usage Measurements to be recorded.",
             "type": "object",
             "title": "Usage Measurement Property",
@@ -991,7 +991,7 @@
             "$id": "de.asset.usagemeasurementproperty-1.0.0.json"
         },
         "de.party.party.communication.base-1.0.0.json": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "The base model of DE Party communication",
             "type": "object",
             "title": "Base Party communication Model",
@@ -1056,14 +1056,14 @@
                     }
                 }
             ],
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "Ingestion of Work Order Dependencies",
             "type": "object",
             "title": "Ingestion of Work Order Dependencies",
             "$id": "de.workorder.workorderdependency.ingestion-1.0.0.json"
         },
         "de.party.party.communication.web-1.0.0.json": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "The base model of DE Party messaging web",
             "type": "object",
             "title": "Base Party communication web Model",
@@ -1182,21 +1182,21 @@
                     }
                 }
             ],
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "Event wrapper used for ingestion of Work Order Templates in Data Fabric",
             "type": "object",
             "title": "Event wrapper used for ingestion of Work Order Templates in Data Fabric",
             "$id": "de.workorder.workordertemplate.event-1.0.0.json"
         },
         "de.asset.assetmodel.identity.uuid-1.0.0.json": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "The unique technical identifier for the Asset Model Id.",
             "title": "Asset Model UUID",
             "$ref": "#/definitions/de.identity-1.0.0.json",
             "$id": "de.asset.assetmodel.identity.uuid-1.0.0.json"
         },
         "de.attachment.attachment-1.0.0.json": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "Model defines the attributes for the Attachment",
             "type": "object",
             "title": "Attachment  Model",
@@ -1237,7 +1237,7 @@
             "$id": "de.attachment.attachment-1.0.0.json"
         },
         "de.party.party.communication.phone-1.0.0.json": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "The base model of DE Party communication phone",
             "type": "object",
             "title": "Base Party communication phone Model",
@@ -1290,14 +1290,14 @@
             "$id": "de.party.party.communication.phone-1.0.0.json"
         },
         "de.skill.skill.identity.uuid-1.0.0.json": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "Skill UUID (Primary Key)",
             "title": "Skill UUID",
             "$ref": "#/definitions/de.identity-1.0.0.json",
             "$id": "de.skill.skill.identity.uuid-1.0.0.json"
         },
         "de.api.error.response-1.0.0.json": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "Error response from api service",
             "type": "object",
             "title": "Error response from api service",
@@ -1334,13 +1334,13 @@
                     "type": "null"
                 }
             ],
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "Work Order Template UUID (Primary Key)",
             "title": "Work Order Template UUID",
             "$id": "de.nullable.workorder.workordertemplate.identity.uuid-1.0.0.json"
         },
         "de.core.extendedattributes-1.0.0.json": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "The definition of a extended attributes",
             "type": "object",
             "title": "Extended Attribute Model",
@@ -1372,7 +1372,7 @@
             "$id": "de.core.extendedattributes-1.0.0.json"
         },
         "de.skill.skillset-1.0.0.json": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "Skillset is used to represent a group or collection of  individual skills that make make up a common skill requirement.",
             "type": "object",
             "title": "Skillset Model",
@@ -1499,7 +1499,7 @@
             "$id": "de.skill.skillset-1.0.0.json"
         },
         "de.party.party.identity.uuid-1.0.0.json": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "Party UUID (Primary Key)",
             "title": "Party UUID ",
             "$ref": "#/definitions/de.identity-1.0.0.json",
@@ -1564,14 +1564,14 @@
                     }
                 }
             ],
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "The Asset Position holds the details of the Asset position and the Asset fitted to the position. When an Asset is fitted to the position, validation is conducted with the Asset System Model.",
             "type": "object",
             "title": "Asset Position",
             "$id": "de.asset.assetposition-1.0.0.json"
         },
         "de.workorder.workorder.statustypes-1.0.0.json": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "A set of valid status types for Work Orders",
             "type": "string",
             "title": "Work Order Status Types Model",
@@ -1624,14 +1624,14 @@
                     }
                 }
             ],
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "The Component Position holds the details of the Component position and the Component fitted to the position.",
             "type": "object",
             "title": "Component Position",
             "$id": "de.asset.componentposition-1.0.0.json"
         },
         "de.core.event-1.0.0.json": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "Event wrapper used for all internal communication between services in Data Fabric",
             "type": "object",
             "title": "Event wrapper used for all internal communication between services in Data Fabric",
@@ -1672,7 +1672,7 @@
             "$id": "de.core.event-1.0.0.json"
         },
         "de.skill.skill-1.0.0.json": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "skill is used to represent an individual skill",
             "type": "object",
             "title": "Skill Model",
@@ -1783,7 +1783,7 @@
                     }
                 }
             ],
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "Work Order Template Storage Completed Events in Data Fabric",
             "type": "object",
             "title": "Work Order Template Storage Completed Events in Data Fabric",
@@ -1806,7 +1806,7 @@
                     }
                 }
             ],
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "Profiles for API Create/Update request of Work Orders",
             "type": "object",
             "definitions": {
@@ -1941,13 +1941,13 @@
                     "type": "null"
                 }
             ],
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "Nullable Asset UUID (Primary Key)",
             "title": "Nullable Asset UUID",
             "$id": "de.nullable.asset.asset.identity.uuid-1.0.0.json"
         },
         "de.party.party.individual-1.0.0.json": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "The base model of DE Party individual",
             "type": "object",
             "title": "Party Individual Model",
@@ -2024,7 +2024,7 @@
                     "type": "null"
                 }
             ],
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "A string that represents Date/Time in ISO 8601 format",
             "title": "A Nullable Date time",
             "$id": "de.nullable.datetime-1.0.0.json"
@@ -2276,14 +2276,14 @@
                     ]
                 }
             ],
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "A model representing the DE Location",
             "type": "object",
             "title": "Location Model",
             "$id": "de.location.location-1.0.0.json"
         },
         "de.api.createupdate.request-1.0.0.json": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "Base for create/update (ingestion) profiles",
             "type": "object",
             "title": "Base for create/update (ingestion) profiles",
@@ -2304,7 +2304,7 @@
             "$id": "de.api.createupdate.request-1.0.0.json"
         },
         "de.core.extendedattributes.groups-1.0.0.json": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "The definition of a groups for extended attributes",
             "additionalProperties": false,
             "type": "object",
@@ -2330,7 +2330,7 @@
             "$id": "de.core.extendedattributes.groups-1.0.0.json"
         },
         "de.party.partyrelationship.types-1.0.0.json": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "A set of valid relationship party types",
             "type": "string",
             "title": "Relationship Party Types Model",
@@ -2350,14 +2350,14 @@
             "$id": "de.party.partyrelationship.types-1.0.0.json"
         },
         "de.asset.componentposition.identity.uuid-1.0.0.json": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "The unique technical identifier of the Component Position.",
             "title": "Component Position UUID",
             "$ref": "#/definitions/de.identity-1.0.0.json",
             "$id": "de.asset.componentposition.identity.uuid-1.0.0.json"
         },
         "de.workorder.workordertemplatedependency-1.0.0.json": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "The Work Order Dependency specifies the dependency between two Work Order Templates",
             "type": "object",
             "title": "Work Order Template Dependency Model",
@@ -2465,7 +2465,7 @@
                     }
                 }
             ],
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "Ingestion of Work Orders",
             "type": "object",
             "title": "Ingestion of Work Orders",
@@ -2480,13 +2480,13 @@
                     "type": "null"
                 }
             ],
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "Nullable Account UUID (Primary Key)",
             "title": "Nullable Account UUID",
             "$id": "de.nullable.account.account.identity.uuid-1.0.0.json"
         },
         "de.party.party.base-1.0.0.json": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "The base model of DE Party",
             "type": "object",
             "title": "Base Party Model",
@@ -2584,7 +2584,7 @@
             "$id": "de.party.party.base-1.0.0.json"
         },
         "de.unitofmeasure.list-1.0.0.json": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "Unit Of Measure List",
             "type": "string",
             "title": "Unit Of Measure List",
@@ -2616,7 +2616,7 @@
                     "type": "null"
                 }
             ],
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "A set of valid work types for Work Orders",
             "title": "Work Order Work Types Model",
             "$id": "de.workorder.workorder.worktypes-1.0.0.json"
@@ -2661,21 +2661,21 @@
                     }
                 }
             ],
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "Ingestion Result of Work Order Template Dependencies",
             "type": "object",
             "title": "Ingestion Result of Work Order Template Dependencies",
             "$id": "de.workorder.workordertemplatedependency.ingestion.result-1.0.0.json"
         },
         "de.location.location.identity.uuid-1.0.0.json": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "Location UUID (Primary Key)",
             "title": "Location UUID",
             "$ref": "#/definitions/de.identity-1.0.0.json",
             "$id": "de.location.location.identity.uuid-1.0.0.json"
         },
         "de.skill.skill.reviewperioduomtypes-1.0.0.json": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "A set of valid UOM types for Skills",
             "type": "string",
             "title": "Review Period UOM Types Model",
@@ -2738,14 +2738,14 @@
                     }
                 }
             ],
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "Event wrapper used for ingestion of Work Order Dependencies in Data Fabric",
             "type": "object",
             "title": "Event wrapper used for ingestion of Work Order Dependencies in Data Fabric",
             "$id": "de.workorder.workorderdependency.event-1.0.0.json"
         },
         "de.workorder.workorderdependency.identity.uuid-1.0.0.json": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "Work Order Dependency UUID (Primary Key)",
             "title": "Work Order Dependency UUID",
             "$ref": "#/definitions/de.identity-1.0.0.json",
@@ -2791,21 +2791,21 @@
                     }
                 }
             ],
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "Ingestion Result of Work Orders",
             "type": "object",
             "title": "Ingestion Result of Work Orders",
             "$id": "de.workorder.workorder.ingestion.result-1.0.0.json"
         },
         "de.workorderactivity.workordertemplateactivity.identity.uuid-1.0.0.json": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "Workorder Template Activity UUID (Primary Key)",
             "title": "Workorder Template Activity UUID",
             "$ref": "#/definitions/de.identity-1.0.0.json",
             "$id": "de.workorderactivity.workordertemplateactivity.identity.uuid-1.0.0.json"
         },
         "de.userstatus.list-1.0.0.json": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "UserStatus List",
             "type": "string",
             "title": "UserStatus List",
@@ -2820,7 +2820,7 @@
             "$id": "de.userstatus.list-1.0.0.json"
         },
         "de.account.account-1.0.0.json": {
-            "$schema": "http://json-schema.org/draft-07/schema",
+            "$schema": "http://json-schema.org/draft-04/schema",
             "description": "account model",
             "type": "object",
             "title": "Account Model",
@@ -2993,13 +2993,13 @@
                     "description": "Message not persisted on kafka topic."
                 }
             ],
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "Error codes defined for different types of errors in the Datafabric",
             "title": "Error codes defined for different types of errors",
             "$id": "de.error.codes-1.0.0.json"
         },
         "de.workorderactivity.workorderactivity-1.0.0.json": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "The Work Order Activity is used by a Work Order to define a set of Activities to be conducted for the Work Order.",
             "type": "object",
             "title": "Work Order Activity model",
@@ -3064,21 +3064,21 @@
             "$id": "de.workorderactivity.workorderactivity-1.0.0.json"
         },
         "de.financialbalance.currency.identity.uuid-1.0.0.json": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "Currency UUID (Primary Key)",
             "title": "Currency UUID",
             "$ref": "#/definitions/de.identity-1.0.0.json",
             "$id": "de.financialbalance.currency.identity.uuid-1.0.0.json"
         },
         "de.party.partyrelationship.identity.uuid-1.0.0.json": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "Party Relationship UUID (Primary Key)",
             "title": "Party Relationship UUID ",
             "$ref": "#/definitions/de.identity-1.0.0.json",
             "$id": "de.party.partyrelationship.identity.uuid-1.0.0.json"
         },
         "de.workorder.workordertemplate-1.0.0.json": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "The Work Order Template is used as the entity that can be used to create a physical Work Order. A Work Order Template can have a sequence of Work Order Template Activities.",
             "type": "object",
             "title": "Work Order Template Model",
@@ -3267,7 +3267,7 @@
             "$id": "de.workorder.workordertemplate-1.0.0.json"
         },
         "de.asset.asset.status-1.0.0.json": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "The status of the Asset/ Asset Model element.",
             "type": "string",
             "title": "Asset Model Status",
@@ -3280,7 +3280,7 @@
             "$id": "de.asset.asset.status-1.0.0.json"
         },
         "de.domains-1.0.0.json": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "Domains in the Datafabric",
             "title": "Domain Model",
             "enum": [
@@ -3315,7 +3315,7 @@
             "$id": "de.domains-1.0.0.json"
         },
         "de.asset.assetmodel-1.0.0.json": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "The Asset Model defines the details for the Asset Model as its own entity and relates to the Asset Model Definition and the Asset. The Asset Model can group assets as a collective and with the Asset Model definition, defines the rules for the Assets using the Asset Model.",
             "type": "object",
             "title": "Asset Model",
@@ -3518,7 +3518,7 @@
                     }
                 }
             ],
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "Work Order Storage Completed Events in Data Fabric",
             "type": "object",
             "title": "Work Order Storage Completed Events in Data Fabric",
@@ -3548,7 +3548,7 @@
             "$id": "de.workorder.workorder.storage.completed.event-1.0.0.json"
         },
         "de.workorderactivity.workordertemplateactivity-1.0.0.json": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "The Work Order Template Activity is used by a Work Order Template to define a set of Activities that can be used for the work to be conducted using the Work Order Template.",
             "type": "object",
             "title": "Work Order Template Activity model",
@@ -3618,7 +3618,7 @@
             "$id": "de.workorderactivity.workordertemplateactivity-1.0.0.json"
         },
         "de.workorder.workorder.date.time.iso-1.0.0.json": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "The Work Order Model with date time fields in iso format",
             "type": "object",
             "title": "Work Order Model with date time fields in iso format",
@@ -3666,7 +3666,7 @@
             "$id": "de.workorder.workorder.date.time.iso-1.0.0.json"
         },
         "de.party.party.attachment-1.0.0.json": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "The base model of DE Party attachment",
             "type": "object",
             "title": "Party Attachment Model",
@@ -3690,7 +3690,7 @@
             "$id": "de.party.party.attachment-1.0.0.json"
         },
         "de.api.create.update.success.response-1.0.0.json": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "Create/Update API Success response",
             "type": "object",
             "title": "Create/Update API Success response",
@@ -3711,7 +3711,7 @@
             "$id": "de.api.create.update.success.response-1.0.0.json"
         },
         "de.party.party.communication.messaging-1.0.0.json": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "The base model of DE Party messaging phone",
             "type": "object",
             "title": "Base Party communication messaging Model",
@@ -3736,7 +3736,7 @@
             "$id": "de.party.party.communication.messaging-1.0.0.json"
         },
         "de.workorder.workordertemplate.dependencytypes-1.0.0.json": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "A set of valid dependency types for Work Order Templates",
             "$comment": "Defines the dependency type between two Work Orders or two Work Order Templates",
             "type": "string",
@@ -3771,14 +3771,14 @@
                     ]
                 }
             ],
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "The model of DE Party",
             "type": "object",
             "title": "Party Model",
             "$id": "de.party.party-1.0.0.json"
         },
         "de.manufacturer.list-1.0.0.json": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "Manufacturer List",
             "type": "string",
             "title": "Manufacturer List",
@@ -3790,7 +3790,7 @@
             "$id": "de.manufacturer.list-1.0.0.json"
         },
         "de.asset.componentposition.base-1.0.0.json": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "The Component Position.",
             "type": "object",
             "title": "Component Position",
@@ -3860,7 +3860,7 @@
             "$id": "de.asset.componentposition.base-1.0.0.json"
         },
         "de.workorder.workorder.api.retrieval.request-1.0.0.json": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "Work Order API Request",
             "type": "object",
             "properties": {
@@ -3913,7 +3913,7 @@
             "$id": "de.workorder.workorder.api.retrieval.request-1.0.0.json"
         },
         "de.account.account.identity.uuid-1.0.0.json": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "Account UUID (Primary Key)",
             "title": "Account UUID",
             "$ref": "#/definitions/de.identity-1.0.0.json",
@@ -4059,14 +4059,14 @@
                     }
                 }
             ],
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "Event wrapper used for ingestion of Work Orders in Data Fabric",
             "type": "object",
             "title": "Event wrapper used for ingestion of Work Orders in Data Fabric",
             "$id": "de.workorder.workorder.event-1.0.0.json"
         },
         "de.party.partyrelationship-1.0.0.json": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "The base model of DE Party Relationship",
             "type": "object",
             "title": "Base Party Relationship Model",
@@ -4121,7 +4121,7 @@
             "$id": "de.party.partyrelationship-1.0.0.json"
         },
         "de.workorder.workorder.closedreason-1.0.0.json": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "A set of valid Closed reason for Work Orders",
             "title": "Work Order Closed Reason Model",
             "enum": [
@@ -4172,7 +4172,7 @@
                     }
                 }
             ],
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "Ingestion of Work Order Template Dependencies",
             "type": "object",
             "title": "Ingestion of Work Order Template Dependencies",
@@ -4193,13 +4193,13 @@
                     "type": "integer"
                 }
             ],
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "nullable date-time field definition to support both ISO 8601 format and milliseconds",
             "title": "Nullable Date time type",
             "$id": "de.nullable.datetime.type-1.0.0.json"
         },
         "de.productservicecatalogue.catalogueitem-1.0.0.json": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "Catalogue Item defines the attributes for the catalogue item",
             "type": "object",
             "title": "Catalogue Item  Model",
@@ -4369,7 +4369,7 @@
                     "type": "null"
                 }
             ],
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "Nullable Party UUID (Primary Key)",
             "title": "Nullable Party UUID ",
             "$id": "de.nullable.party.party.identity.uuid-1.0.0.json"
@@ -4414,14 +4414,14 @@
                     }
                 }
             ],
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "Ingestion Result of Work Order Templates",
             "type": "object",
             "title": "Ingestion Result of Work Order Templates",
             "$id": "de.workorder.workordertemplate.ingestion.result-1.0.0.json"
         },
         "de.identity-1.0.0.json": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "The description of an identity string, UUID (Primary Key)",
             "type": "string",
             "title": "Identity Model",
@@ -4429,7 +4429,7 @@
             "$id": "de.identity-1.0.0.json"
         },
         "de.workorderactivity.workorderactivity.identity.uuid-1.0.0.json": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "Workorder Activity UUID (Primary Key)- The unique technical identifier for the Work Order Activity.",
             "title": "Workorder Activity UUID",
             "$ref": "#/definitions/de.identity-1.0.0.json",
@@ -4484,14 +4484,14 @@
                     }
                 }
             ],
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "Work Order Dependency Storage Completed Events in Data Fabric",
             "type": "object",
             "title": "Work Order Dependency Storage Completed Events in Data Fabric",
             "$id": "de.workorder.workorderdependency.storage.completed.event-1.0.0.json"
         },
         "de.workorder.workorder.initiationtypes-1.0.0.json": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "A set of valid Initiation types for Work Orders",
             "title": "Work Order Initiation Types Model",
             "enum": [
@@ -4506,7 +4506,7 @@
             "$id": "de.workorder.workorder.initiationtypes-1.0.0.json"
         },
         "de.core.geometrypoint-1.0.0.json": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "A valid geometry point",
             "additionalProperties": false,
             "type": "object",
@@ -4539,13 +4539,13 @@
                     "type": "null"
                 }
             ],
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "A set of valid schedule flag for Work Orders",
             "title": "Work Order Schedule Flag Model",
             "$id": "de.workorder.workorder.scheduleflag-1.0.0.json"
         },
         "de.party.party.communication.email-1.0.0.json": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "The base model of DE Party messaging email",
             "type": "object",
             "title": "Base Party communication email Model",
@@ -4562,14 +4562,14 @@
             "$id": "de.party.party.communication.email-1.0.0.json"
         },
         "de.attachment.attachment.identity.uuid-1.0.0.json": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "Attachment UUID (Primary Key)",
             "title": "Attachment UUID",
             "$ref": "#/definitions/de.identity-1.0.0.json",
             "$id": "de.attachment.attachment.identity.uuid-1.0.0.json"
         },
         "de.workorderactivity.form-1.0.0.json": {
-            "$schema": "http://json-schema.org/draft-07/schema",
+            "$schema": "http://json-schema.org/draft-04/schema",
             "description": "A Form can be associated to an Activity, Work Order Template Activity, Party Form Model, Asset Form Model or Work Form Model entities to describe the Form that is used to either display or consume data.",
             "type": "object",
             "title": "Form Model",
@@ -4627,7 +4627,7 @@
             "$id": "de.workorderactivity.form-1.0.0.json"
         },
         "de.string-1.0.0.json": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "A string that cannot be null",
             "type": "string",
             "title": "A String",
@@ -4655,14 +4655,14 @@
                     ]
                 }
             ],
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "The base model of DE Party communication",
             "type": "object",
             "title": "Base Party communication Model",
             "$id": "de.party.party.communication-1.0.0.json"
         },
         "de.core.auditable-1.0.0.json": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "Defines the properties used to audit an entity in datafabric",
             "type": "object",
             "title": "Entity Audit Model",
@@ -4687,7 +4687,7 @@
             "$id": "de.core.auditable-1.0.0.json"
         },
         "de.workorder.workorder-1.0.0.json": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "The Work Order",
             "type": "object",
             "title": "Work Order Model",
@@ -5046,13 +5046,13 @@
                     "$ref": "#/definitions/de.api.error.response-1.0.0.json"
                 }
             ],
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "Create/Update API Result",
             "title": "Create/Update API result",
             "$id": "de.api.create.update.result-1.0.0.json"
         },
         "de.core.eventmulti-1.0.0.json": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "Multi event wrapper used for bundling events internally in the Data Fabric",
             "type": "object",
             "title": "Multi event wrapper used for bundling events internally in the Data Fabric",
@@ -5087,7 +5087,7 @@
             "$id": "de.core.eventmulti-1.0.0.json"
         },
         "de.workorder.workordertemplate.statustypes-1.0.0.json": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "A set of valid status types for Work Order Templates",
             "type": "string",
             "title": "Work Order Template Status Types Model",
@@ -5100,7 +5100,7 @@
             "$id": "de.workorder.workordertemplate.statustypes-1.0.0.json"
         },
         "de.core.auditable.iso-1.0.0.json": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "Defines the properties used to audit an entity in datafabric",
             "type": "object",
             "title": "Entity ISO Audit Model",
@@ -5127,7 +5127,7 @@
             "$id": "de.core.auditable.iso-1.0.0.json"
         },
         "de.workorder.workorder.api.retrieval.results-1.0.0.json": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "WorkOrder results in DEIM format",
             "type": "object",
             "required": [
@@ -5154,7 +5154,7 @@
             "$id": "de.workorder.workorder.api.retrieval.results-1.0.0.json"
         },
         "de.party.party.group-1.0.0.json": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "The base model of DE Party Group",
             "type": "object",
             "title": "Party Group Model",
@@ -5190,7 +5190,7 @@
             "$id": "de.party.party.group-1.0.0.json"
         },
         "de.asset.assetposition.base-1.0.0.json": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "The Asset Position Base.",
             "type": "object",
             "title": "Asset Position Base",
@@ -5237,7 +5237,7 @@
             "$id": "de.asset.assetposition.base-1.0.0.json"
         },
         "de.productservicecatalogue.manufacturerpartnumber-1.0.0.json": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "Manufacturer Part Number defines the attributes for the Manufacturer and Part Number",
             "type": "object",
             "title": "Manufacturer and Part Number Model",
@@ -5288,7 +5288,7 @@
             "$id": "de.productservicecatalogue.manufacturerpartnumber-1.0.0.json"
         },
         "de.attachment.attachmentref-1.0.0.json": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "Model defines the attributes for the old Attachment structures",
             "type": "object",
             "properties": {
@@ -5317,7 +5317,7 @@
             "$id": "de.attachment.attachmentref-1.0.0.json"
         },
         "de.asset.featureposition.base-1.0.0.json": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "The Feature Position Base",
             "type": "object",
             "title": "Feature Position Base ",
@@ -5365,7 +5365,7 @@
             "$id": "de.asset.featureposition.base-1.0.0.json"
         },
         "de.empty.placeholder-1.0.0.json": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "Placeholder for DEIM's not defines yet",
             "type": "object",
             "title": "Placeholder for DEIM's not defines yet",
@@ -5373,7 +5373,7 @@
         },
         "de.core.geometrytypes-1.0.0.json": {
             "default": "Point",
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "A set of valid geometry types",
             "type": "string",
             "title": "Geometry Types Model",
@@ -5433,14 +5433,14 @@
                     }
                 }
             ],
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "Work Order Template Dependency Storage Completed Events in Data Fabric",
             "type": "object",
             "title": "Work Order Template Dependency Storage Completed Events in Data Fabric",
             "$id": "de.workorder.workordertemplatedependency.storage.completed.event-1.0.0.json"
         },
         "de.code.type-1.0.0.json": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "The code type string",
             "type": "string",
             "title": "code type",
@@ -5448,14 +5448,14 @@
             "$id": "de.code.type-1.0.0.json"
         },
         "de.productservicecatalogue.manufacturerpartnumber.identity.uuid-1.0.0.json": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "Product Service Catalogue Manufacturer Part Number UUID (Primary Key)",
             "title": "Product Service Catalogue Manufacturer Part Number UUID",
             "$ref": "#/definitions/de.identity-1.0.0.json",
             "$id": "de.productservicecatalogue.manufacturerpartnumber.identity.uuid-1.0.0.json"
         },
         "de.party.party.communicationtypes-1.0.0.json": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "A set of valid communication party types",
             "type": "string",
             "title": "Communication Party Types Model",
@@ -5468,14 +5468,14 @@
             "$id": "de.party.party.communicationtypes-1.0.0.json"
         },
         "de.asset.featureposition.identity.uuid-1.0.0.json": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "The unique technical identifier of the Feature Position",
             "title": "Feature Position UUID",
             "$ref": "#/definitions/de.identity-1.0.0.json",
             "$id": "de.asset.featureposition.identity.uuid-1.0.0.json"
         },
         "de.productservicecatalogue.catalogueitem.identity.uuid-1.0.0.json": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "Product Service Catalogue UUID (Primary Key)",
             "title": "Product Service Catalogue Item UUID",
             "$ref": "#/definitions/de.identity-1.0.0.json",
@@ -5490,7 +5490,7 @@
                     "type": "null"
                 }
             ],
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "Nullable Work Order UUID (Primary Key)",
             "title": "Nullable Work Order UUID",
             "$id": "de.nullable.workorder.workorder.identity.uuid-1.0.0.json"
